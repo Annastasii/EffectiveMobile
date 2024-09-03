@@ -5,7 +5,9 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import com.example.core_navigation.composable
 import com.example.core_navigation.routes.FirstDestination
-import com.example.feauture_auth.view.first_auth.AuthScreen
+import com.example.core_navigation.routes.PinCodeDestination
+import com.example.feauture_auth.view.first_auth.ui.first_auth.AuthScreen
+import com.example.feauture_auth.view.first_auth.ui.pin_code.PinCodeScreen
 
 /** Глобальный навигационный граф */
 fun NavGraphBuilder.globalGraph(
@@ -15,6 +17,9 @@ fun NavGraphBuilder.globalGraph(
 
     composable(
         destination = FirstDestination
-    ) { AuthScreen() }
+    ) { AuthScreen(navController) }
 
+    composable(
+        destination = PinCodeDestination
+    ) { PinCodeScreen(navController) }
 }
