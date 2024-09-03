@@ -4,6 +4,7 @@ data class VacancyModel(
     val name: String,
     val company: String,
     val location: String,
+    val cost: String = "",
     val experience: String,
     val publicationDate: String,
     val looking: String,

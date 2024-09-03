@@ -12,4 +12,6 @@
     <string name="vacancies2_4">%s вакансии</string>
     <string name="vacancies">Еще %s вакансий</string>
     <string name="sot">По соответсвию</string>
+    <string name="resp">%s человек уже откликнулись</string>
+    <string name="looking">%s человека сейчас смотрят</string>
 </resources>
