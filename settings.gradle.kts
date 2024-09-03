@@ -21,4 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "EffectiveMobile"
 include(":app")
- 
+include(":core_navigation")
+include(":core_ui")
+include(":auth")
+include(":auth:feauture_auth")

@@ -1,4 +1,4 @@
-package com.example.effectivemobile.screen.bottom_bar
+package com.example.core_ui.view
 
 import androidx.compose.runtime.Composable
 

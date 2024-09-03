@@ -1,4 +1,4 @@
-package com.example.effectivemobile.core_ui
+package com.example.core_ui
 
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.sp
