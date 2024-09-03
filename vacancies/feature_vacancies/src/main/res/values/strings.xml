@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="none"></string>
+    <string name="for_you">Вакансии для вас</string>
+    <string name="now_looking">Сейчас просматривает %s человек</string>
+    <string name="publish">Опубликовано %s</string>
+    <string name="respond">Откликнуться</string>
+    <string name="count_vacancies">Еще %s вакансий</string>
+    <string name="count_vacancy">Еще %s вакансия</string>
+    <string name="count_vacancies2_4">Еще %s вакансии</string>
+    <string name="vacancy">%s вакансия</string>
+    <string name="vacancies2_4">%s вакансии</string>
+    <string name="vacancies">Еще %s вакансий</string>
+    <string name="sot">По соответсвию</string>
+</resources>

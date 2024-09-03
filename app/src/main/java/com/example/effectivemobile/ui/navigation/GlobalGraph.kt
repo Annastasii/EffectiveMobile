@@ -6,6 +6,8 @@ import androidx.navigation.NavGraphBuilder
 import com.example.core_navigation.composable
 import com.example.core_navigation.routes.FirstDestination
 import com.example.core_navigation.routes.PinCodeDestination
+import com.example.core_navigation.routes.VacanciesListDestination
+import com.example.feature_vacancies.ui.list_vacancies.VacanciesListScreen
 import com.example.feauture_auth.view.first_auth.ui.first_auth.AuthScreen
 import com.example.feauture_auth.view.first_auth.ui.pin_code.PinCodeScreen
 
@@ -22,4 +24,8 @@ fun NavGraphBuilder.globalGraph(
     composable(
         destination = PinCodeDestination
     ) { PinCodeScreen(navController) }
+
+    composable(
+        destination = VacanciesListDestination
+    ) { VacanciesListScreen(navController) }
 }

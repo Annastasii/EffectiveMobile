@@ -13,5 +13,5 @@ object CustomColor {
     val NotActiveButtonColor = Color(0xFF00427D)
     val ButtonTextColor = Color(0xFF9F9F9F)
     val InputTextColor = Color(0xFF313234)
-    val GreenButton = Color(0xFF4CB24E)
+    val Green = Color(0xFF4CB24E)
 }
