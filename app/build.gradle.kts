@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
+    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -63,7 +65,6 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
-    implementation(project(":core_ui"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -73,7 +74,28 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    //Hilt
+    implementation("com.google.dagger:hilt-android:2.44.2")
+    implementation("androidx.hilt:hilt-work:1.0.0")
+    kapt("com.google.dagger:hilt-compiler:2.44.2")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
+    kapt("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+    // Moshi
+    implementation("com.squareup.moshi:moshi:1.12.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //OkHttp
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
+
     implementation(project(":vacancies:feature_vacancies"))
     implementation(project(":core_navigation"))
     implementation(project(":auth:feauture_auth"))
+    implementation(project(":core_ui"))
+
+
 }
