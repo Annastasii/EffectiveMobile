@@ -1,24 +1,29 @@
 package com.example.effectivemobile.di
 
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
-//@Module
-//@InstallIn(SingletonComponent::class)
-//object NetworkModule {
-//
-//    @Provides
-//    @Singleton
-//    fun provideRetrofit(
-//        factory: MoshiConverterFactory
-//    ): Retrofit {
-//        return Retrofit.Builder()
-//            .baseUrl("https://drive.usercontent.google.com/u/0/uc?id=1z4TbeDkbfXkvgpoJprXbN85uCcD7f00r&export=download")
-//            .addConverterFactory(factory)
-//            .build()
-//    }
-//
-//}
+@Module
+@InstallIn(SingletonComponent::class)
+object NetworkModule {
+
+    @Provides
+    @Singleton
+    fun provideMoshi(): Moshi = Moshi.Builder().build()
+
+    @Provides
+    @Singleton
+    fun provideRetrofit(moshi: Moshi): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl("https://drive.usercontent.google.com/")  // Базовый URL для Retrofit
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .build()
+    }
+
+}

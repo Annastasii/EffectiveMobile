@@ -75,15 +75,18 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     //Hilt
-    implementation("com.google.dagger:hilt-android:2.44.2")
+    implementation("com.google.dagger:hilt-android:2.52")
     implementation("androidx.hilt:hilt-work:1.0.0")
-    kapt("com.google.dagger:hilt-compiler:2.44.2")
+    kapt("com.google.dagger:hilt-compiler:2.52")
     kapt("androidx.hilt:hilt-compiler:1.0.0")
     kapt("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     // Moshi
     implementation("com.squareup.moshi:moshi:1.12.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+
+    // Moshi конвертер для Retrofit
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
 
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
