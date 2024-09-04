@@ -14,4 +14,11 @@
     <string name="sot">По соответсвию</string>
     <string name="resp">%s человек уже откликнулись</string>
     <string name="looking">%s человека сейчас смотрят</string>
+    <string name="your_task">Ваши задачи</string>
+    <string name="question">Задайте вопрос работодателю</string>
+    <string name="question_text">Он получит его с откликом на вакансию</string>
+    <string name="resume">Резюме для отклика</string>
+    <string name="add_message">Добавить сопроводительное</string>
+    <string name="your_message">Ваше сопроводительное письмо</string>
+
 </resources>

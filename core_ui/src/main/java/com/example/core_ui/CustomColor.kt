@@ -14,5 +14,6 @@ object CustomColor {
     val ButtonTextColor = Color(0xFF9F9F9F)
     val InputTextColor = Color(0xFF313234)
     val Green = Color(0xFF4CB24E)
-    val DarkGreen = Color(0xFF4CB24E)
+    val DarkGreen = Color(0xFF015905)
+    val Grey = Color(0xFF858688)
 }

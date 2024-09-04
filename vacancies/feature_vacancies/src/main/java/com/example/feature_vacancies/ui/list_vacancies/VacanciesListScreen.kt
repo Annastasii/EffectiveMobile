@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -30,13 +29,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.core_navigation.routes.VacancyInfoDestination
 import com.example.core_ui.CustomColor
-import com.example.core_ui.FontStyle
 import com.example.core_ui.Padding
 import com.example.feature_vacancies.R
 import com.example.feature_vacancies.domain.Constants
 import com.example.feature_vacancies.ui.list_vacancies.view.InfoColumn
-import com.example.feature_vacancies.ui.list_vacancies.view.Offer
 import com.example.feature_vacancies.ui.list_vacancies.view.Vacancy
 
 @Composable
@@ -89,14 +87,18 @@ fun VacanciesListScreen(navController: NavController) {
         if (!isOpenAllVacancy.value) {
             Constants.vacancy.slice(1..3).forEach {
                 item {
-                    Vacancy(it)
+                    Vacancy(
+                        it,
+                        onClickColumn = { navController.navigate(VacancyInfoDestination.route()) })
                     Spacer(modifier = Modifier.height(Padding._12))
                 }
             }
         } else {
             Constants.vacancy.forEach {
                 item {
-                    Vacancy(it)
+                    Vacancy(
+                        it,
+                        onClickColumn = { navController.navigate(VacancyInfoDestination.route()) })
                     Spacer(modifier = Modifier.height(Padding._12))
                 }
             }

@@ -1,6 +1,7 @@
 package com.example.feature_vacancies.ui.list_vacancies.view
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -24,14 +25,16 @@ import com.example.core_ui.CustomColor
 import com.example.core_ui.FontStyle
 import com.example.core_ui.Padding
 import com.example.feature_vacancies.R
+import com.example.feature_vacancies.ui.favourite.IconFavourite
 import com.example.feature_vacancies.ui.list_vacancies.state.VacancyModel
 
 @Composable
-internal fun Vacancy(item: VacancyModel) {
+internal fun Vacancy(item: VacancyModel, onClickColumn: () -> Unit) {
     Column(
         modifier = Modifier
             .background(CustomColor.SecondaryBgColor, RoundedCornerShape(10.dp))
             .padding(Padding._12)
+            .clickable { onClickColumn() }
     ) {
         Row(Modifier.fillMaxWidth()) {
             Text(

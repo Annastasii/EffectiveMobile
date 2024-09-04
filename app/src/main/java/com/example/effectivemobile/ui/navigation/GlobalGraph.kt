@@ -7,7 +7,9 @@ import com.example.core_navigation.composable
 import com.example.core_navigation.routes.FirstDestination
 import com.example.core_navigation.routes.PinCodeDestination
 import com.example.core_navigation.routes.VacanciesListDestination
+import com.example.core_navigation.routes.VacancyInfoDestination
 import com.example.feature_vacancies.ui.list_vacancies.VacanciesListScreen
+import com.example.feature_vacancies.ui.vacancy_info.VacancyInfoScreen
 import com.example.feauture_auth.view.first_auth.ui.first_auth.AuthScreen
 import com.example.feauture_auth.view.first_auth.ui.pin_code.PinCodeScreen
 
@@ -28,4 +30,8 @@ fun NavGraphBuilder.globalGraph(
     composable(
         destination = VacanciesListDestination
     ) { VacanciesListScreen(navController) }
+
+    composable(
+        destination = VacancyInfoDestination
+    ) { VacancyInfoScreen() }
 }
