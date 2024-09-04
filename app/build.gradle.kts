@@ -99,6 +99,8 @@ dependencies {
     implementation(project(":core_navigation"))
     implementation(project(":auth:feauture_auth"))
     implementation(project(":core_ui"))
+    implementation(project(":core_data"))
+    implementation(project(":core_data:core_network"))
 
 
 }

@@ -5,10 +5,8 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class OffersDTOI(
-    @Json(name = "id")
-    val id: String,
-    @Json(name = "title")
+    val id: String?,
     val title: String,
-    @Json(name = "link")
-    val link: ButtonDTOI
+    val link: String,
+    val button: ButtonDTOI? = null
 )
