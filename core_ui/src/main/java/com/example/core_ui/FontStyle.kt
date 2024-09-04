@@ -6,6 +6,7 @@ import androidx.compose.ui.unit.sp
 
 object FontStyle {
 
+    val Style_10 = TextStyle(fontSize = 10.sp)
     val Style_12 = TextStyle(fontSize = 12.sp)
     val Style_14 = TextStyle(fontSize = 14.sp)
     val Style_16 = TextStyle(fontSize = 16.sp)

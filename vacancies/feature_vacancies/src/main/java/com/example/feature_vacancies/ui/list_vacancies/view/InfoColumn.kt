@@ -64,4 +64,5 @@ fun InfoColumn(isOpenAllVacancy: Boolean) {
             }
         }
     }
+    Spacer(modifier = Modifier.height(Padding._16))
 }

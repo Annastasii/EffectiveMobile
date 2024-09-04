@@ -1,4 +1,4 @@
-package com.example.feature_vacancies.ui.favourite
+package com.example.feature_vacancies.ui.common
 
 import androidx.compose.foundation.clickable
 import androidx.compose.material3.Icon

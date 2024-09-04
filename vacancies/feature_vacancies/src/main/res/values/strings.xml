@@ -20,5 +20,6 @@
     <string name="resume">Резюме для отклика</string>
     <string name="add_message">Добавить сопроводительное</string>
     <string name="your_message">Ваше сопроводительное письмо</string>
+    <string name="favourite">Избранное</string>
 
 </resources>

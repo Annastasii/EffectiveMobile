@@ -1,6 +1,7 @@
 package com.example.feature_vacancies.ui.vacancy_info
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,12 +14,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.core_ui.CustomColor
 import com.example.core_ui.FontStyle
 import com.example.core_ui.Padding
+import com.example.core_ui.view.bottom_app_bar.BottomAppBar
 import com.example.feature_vacancies.R
 import com.example.feature_vacancies.ui.dialogs.respond.RespondDialog
 import com.example.feature_vacancies.ui.list_vacancies.state.VacancyModel
@@ -30,7 +34,7 @@ import com.example.feature_vacancies.ui.vacancy_info.view.StatisticRow
 import com.example.feature_vacancies.ui.vacancy_info.view.TopBar
 
 @Composable
-fun VacancyInfoScreen() {
+fun VacancyInfoScreen(navController: NavController) {
     val item = VacancyModel(
         name = "UI/UX Designer",
         looking = "7",
@@ -77,5 +81,8 @@ fun VacancyInfoScreen() {
                 )
             }
         }
+    }
+    Box(contentAlignment = Alignment.BottomCenter, modifier = Modifier.fillMaxSize()) {
+        BottomAppBar(navController)
     }
 }

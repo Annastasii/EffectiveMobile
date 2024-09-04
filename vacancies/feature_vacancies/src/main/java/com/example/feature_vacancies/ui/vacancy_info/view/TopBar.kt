@@ -15,7 +15,7 @@ import androidx.compose.ui.res.painterResource
 import com.example.core_ui.CustomColor
 import com.example.core_ui.Padding
 import com.example.feature_vacancies.R
-import com.example.feature_vacancies.ui.favourite.IconFavourite
+import com.example.feature_vacancies.ui.common.IconFavourite
 
 @Composable
 fun TopBar() {

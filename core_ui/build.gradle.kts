@@ -55,6 +55,10 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
+
+    // Compose Material
+    implementation("androidx.compose.material:material:1.3.1")
+
     implementation(project(":core_navigation"))
 
     
