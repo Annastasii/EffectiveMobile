@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -23,6 +24,7 @@ import com.example.feauture_auth.view.first_auth.ui.first_auth.view.FindWorkColu
 
 @Composable
 fun AuthScreen(navController: NavController, viewModel: AuthViewModel = hiltViewModel()) {
+    val email = viewModel.email.collectAsState().value
     Box(
         modifier = Modifier
             .background(com.example.core_ui.CustomColor.PrimaryBgColor)
@@ -39,7 +41,11 @@ fun AuthScreen(navController: NavController, viewModel: AuthViewModel = hiltView
         )
         Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
             Column {
-                FindWorkColumn(onButtonClick = { navController.navigate(PinCodeDestination.route()) })
+                FindWorkColumn(
+                    email = email,
+                    enable = viewModel.emailValidator.collectAsState().value,
+                    onButtonClick = { navController.navigate(PinCodeDestination.createRoute(email)) },
+                    onChangeEmail = { viewModel.enterEmail(it) })
                 Spacer(modifier = Modifier.height(Padding._16))
                 FindEmployeeColumn()
             }

@@ -13,11 +13,13 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.core_navigation.routes.VacanciesListDestination
 import com.example.core_ui.CustomColor
@@ -27,7 +29,8 @@ import com.example.feauture_auth.R
 import com.example.feauture_auth.view.first_auth.ui.pin_code.view.PinCodeTextField
 
 @Composable
-fun PinCodeScreen(navController: NavController) {
+fun PinCodeScreen(navController: NavController, viewModel: PinCodeViewModel = hiltViewModel()) {
+    val pin = viewModel.pin.collectAsState().value
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -36,7 +39,7 @@ fun PinCodeScreen(navController: NavController) {
     ) {
         Column(modifier = Modifier.padding(Padding._16)) {
             Text(
-                text = stringResource(id = R.string.send, "example@mail.ru"),
+                text = stringResource(id = R.string.send, viewModel.email),
                 color = CustomColor.TextColor,
                 style = FontStyle.Style_20
             )
@@ -47,10 +50,11 @@ fun PinCodeScreen(navController: NavController) {
                 style = FontStyle.Style_14
             )
             Spacer(modifier = Modifier.height(Padding._16))
-            PinCodeTextField()
+            PinCodeTextField(pin, viewModel::enterPin)
             Spacer(modifier = Modifier.height(Padding._16))
             Button(
                 onClick = { navController.navigate(VacanciesListDestination.route()) },
+                enabled = pin.length == 4,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(Padding._48),

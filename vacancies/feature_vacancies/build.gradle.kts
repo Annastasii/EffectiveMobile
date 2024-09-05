@@ -65,8 +65,14 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.52")
     kapt("androidx.hilt:hilt-compiler:1.2.0")
 
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //OkHttp
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
+
     implementation(project(":core_navigation"))
     implementation(project(":core_ui"))
     implementation(project(":data:core_network"))
-    implementation(project(":data:core_database"))
 }

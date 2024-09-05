@@ -16,4 +16,5 @@ object CustomColor {
     val Green = Color(0xFF4CB24E)
     val DarkGreen = Color(0xFF015905)
     val Grey = Color(0xFF858688)
+    val GreyLight = Color(0xFFDBDBDB)
 }

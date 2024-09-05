@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -20,6 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -29,7 +31,12 @@ import com.example.core_ui.Padding
 import com.example.feauture_auth.R
 
 @Composable
-internal fun FindWorkColumn(onButtonClick: () -> Unit) {
+internal fun FindWorkColumn(
+    email: String,
+    enable: Boolean,
+    onButtonClick: () -> Unit,
+    onChangeEmail: (String) -> Unit,
+) {
     Column(
         modifier = Modifier
             .background(CustomColor.SecondaryBgColor, RoundedCornerShape(10.dp))
@@ -46,21 +53,48 @@ internal fun FindWorkColumn(onButtonClick: () -> Unit) {
         )
         Spacer(modifier = Modifier.height(Padding._16))
         TextField(
-            value = "EE", onValueChange = {},
+            value = email, onValueChange = { onChangeEmail(it) },
             modifier = Modifier
                 .background(CustomColor.SecondaryBgColor)
                 .clip(RoundedCornerShape(10.dp))
-                .height(Padding._48),
+                .height(Padding._48)
+                .fillMaxWidth(),
             colors = TextFieldDefaults.colors(
                 focusedContainerColor = CustomColor.InputTextColor,
                 unfocusedContainerColor = CustomColor.InputTextColor,
                 focusedTextColor = CustomColor.TextColor,
                 unfocusedTextColor = CustomColor.TextColor
-            )
+            ),
+            trailingIcon = {
+                if (email.isNotBlank()) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.union),
+                        contentDescription = null,
+                        tint = CustomColor.GreyLight,
+                        modifier = Modifier.clickable { onChangeEmail("") }
+                    )
+                }
+            },
+            placeholder = {
+                Row(Modifier.fillMaxWidth()) {
+                    Icon(
+                        painter = painterResource(R.drawable.ic_message),
+                        contentDescription = null,
+                        tint = CustomColor.Grey
+                    )
+                    Spacer(modifier = Modifier.width(Padding._8))
+                    Text(
+                        text = stringResource(id = R.string.email),
+                        style = FontStyle.Style_14,
+                        color = CustomColor.Grey
+                    )
+                }
+            }
         )
         Spacer(modifier = Modifier.height(Padding._16))
         Row(verticalAlignment = Alignment.CenterVertically) {
             Button(
+                enabled = enable,
                 onClick = { onButtonClick() },
                 modifier = Modifier
                     .fillMaxWidth()

@@ -19,26 +19,23 @@ import com.example.core_ui.Padding
 import com.example.feauture_auth.view.first_auth.domain.Constants
 
 @Composable
-fun PinCodeTextField() {
-    //todo
-    val newPin = "444"
-
+fun PinCodeTextField(pin: String, onEnterPin: (String) -> Unit) {
     val newPinFocusRequester = remember { FocusRequester() }
     BasicTextField(
         modifier = Modifier
             .fillMaxWidth()
             .focusRequester(newPinFocusRequester),
-        value = TextFieldValue(newPin, selection = TextRange(newPin.length)),
+        value = TextFieldValue(pin, selection = TextRange(pin.length)),
         onValueChange = {
             if (it.text.length <= Constants.PIN_COUNT) {
-//                        onEditPin(it.text)
+                onEnterPin(it.text)
             }
         },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
         decorationBox = {
             Row(horizontalArrangement = Arrangement.Center) {
                 repeat(Constants.PIN_COUNT) { index ->
-                    CharView(index = index, text = newPin)
+                    CharView(index = index, text = pin)
                     Spacer(modifier = Modifier.width(Padding._16))
                 }
             }
