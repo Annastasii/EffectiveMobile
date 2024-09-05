@@ -16,10 +16,10 @@ import com.example.core_ui.CustomColor
 import com.example.core_ui.FontStyle
 import com.example.core_ui.Padding
 import com.example.feature_vacancies.R
+import com.example.feature_vacancies.domain.models.VacancyModel
 
 @Composable
-fun Question() {
-    val question = listOf("Где распологается место работы?", "Какой график работы?")
+fun Question(item: VacancyModel) {
     Text(
         text = stringResource(id = R.string.question),
         color = CustomColor.TextColor,
@@ -33,7 +33,7 @@ fun Question() {
     )
     Spacer(modifier = Modifier.height(Padding._12))
     Column {
-        question.forEach {
+        item.questions.forEach {
             Box(
                 modifier = Modifier.background(
                     CustomColor.SecondaryBgColor,

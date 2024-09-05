@@ -18,13 +18,14 @@ import com.example.core_ui.CustomColor
 import com.example.core_ui.FontStyle
 import com.example.core_ui.Padding
 import com.example.feature_vacancies.R
+import com.example.feature_vacancies.domain.models.VacancyModel
 
 @Composable
-fun StatisticRow() {
+fun StatisticRow(item: VacancyModel) {
     Row(horizontalArrangement = Arrangement.Center) {
         CustomBox {
             Text(
-                text = stringResource(R.string.resp, "122"),
+                text = stringResource(R.string.resp, "${item.appliedNumber?:"0"}"),
                 color = CustomColor.TextColor,
                 style = FontStyle.Style_14
             )
@@ -32,7 +33,7 @@ fun StatisticRow() {
         Spacer(modifier = Modifier.width(Padding._12))
         CustomBox {
             Text(
-                text = stringResource(R.string.looking, "2"),
+                text = stringResource(R.string.looking, "${item.lookingNumber?:"0"}"),
                 color = CustomColor.TextColor,
                 style = FontStyle.Style_14
             )

@@ -1,6 +1,5 @@
 package com.example.feature_vacancies.ui.list_vacancies
 
-import android.provider.SyncStateContract
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
@@ -42,24 +41,30 @@ fun VacanciesListScreen(
     val offers = viewModel.offerList.collectAsState().value
     val isOpenAllVacancy = remember { mutableStateOf(false) }
     val vacancyList = viewModel.vacancyList.collectAsState().value
-    val vacancies = if (!isOpenAllVacancy.value) vacancyList.slice(1..3) else vacancyList
+    val vacancies =
+        if (!(isOpenAllVacancy.value) && vacancyList.count() > 2) vacancyList.slice(1..3) else vacancyList
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .background(CustomColor.PrimaryBgColor)
-            .padding(start = Padding._16, top = Padding._16, end = Padding._16)
+            .padding(
+                start = Padding._16,
+                top = Padding._16,
+                end = Padding._16,
+                bottom = Padding._53
+            )
     ) {
         item { TopTextField() }
-        item { InfoColumn(isOpenAllVacancy.value, offers) }
+        item { InfoColumn(isOpenAllVacancy.value, offers, vacancyList.count()) }
         vacancies.forEach {
             item {
-//                Vacancy(
-//                    it,
-//                    onClickColumn = { navController.navigate(VacancyInfoDestination.route()) })
-//                Spacer(modifier = Modifier.height(Padding._12))
+                Vacancy(
+                    it,
+                    onClickColumn = { navController.navigate(VacancyInfoDestination.createRoute(it.id)) })
+                Spacer(modifier = Modifier.height(Padding._12))
             }
         }
-        if (!isOpenAllVacancy.value) {
+        if (!(isOpenAllVacancy.value)) {
             item {
                 Button(
                     onClick = { isOpenAllVacancy.value = true },
@@ -75,8 +80,11 @@ fun VacanciesListScreen(
                     )
                 ) {
                     Text(
-                        text = getButtonText(vacancies.count()),
-//                        pluralStringResource(R.plurals.count_vacancy, vacancies.count()),
+                        text = pluralStringResource(
+                            R.plurals.count_vacancy,
+                            vacancyList.count(),
+                            vacancyList.count()
+                        ),
                         fontSize = 14.sp
                     )
                 }
@@ -87,15 +95,6 @@ fun VacanciesListScreen(
         BottomAppBar(navController)
     }
 }
-
-@Composable
-fun getButtonText(count: Int): String =
-    when (count) {
-        1 -> stringResource(id = R.string.count_vacancy, count)
-        2, 3, 4 -> stringResource(id = R.string.count_vacancies2_4, count)
-        in 5..9 -> stringResource(id = R.string.count_vacancies2_4, count)
-        else -> stringResource(id = R.string.count_vacancies, count)
-    }
 
 @Composable
 fun getText(count: Int): String =

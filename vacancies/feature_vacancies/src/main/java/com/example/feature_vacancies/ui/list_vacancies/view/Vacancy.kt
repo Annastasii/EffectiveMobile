@@ -16,6 +16,8 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -30,6 +32,8 @@ import com.example.feature_vacancies.ui.common.IconFavourite
 
 @Composable
 internal fun Vacancy(item: VacancyModel, onClickColumn: () -> Unit) {
+    val isFavourite = remember { mutableStateOf(item.isFavorite) }
+    val publish = item.publishedDate.split("-")
     Column(
         modifier = Modifier
             .background(CustomColor.SecondaryBgColor, RoundedCornerShape(10.dp))
@@ -37,28 +41,32 @@ internal fun Vacancy(item: VacancyModel, onClickColumn: () -> Unit) {
             .clickable { onClickColumn() }
     ) {
         Row(Modifier.fillMaxWidth()) {
-            Text(
-                text = stringResource(id = R.string.now_looking, item.looking),
-                color = CustomColor.Green,
-                style = FontStyle.Style_14
-            )
+            item.lookingNumber?.let {
+                Text(
+                    text = stringResource(id = R.string.now_looking, it),
+                    color = CustomColor.Green,
+                    style = FontStyle.Style_14
+                )
+            }
             Box(contentAlignment = Alignment.TopEnd, modifier = Modifier.fillMaxWidth()) {
-                IconFavourite(isFavourite = item.isFavourite, onClick = {})
+                IconFavourite(
+                    isFavourite = isFavourite.value,
+                    onClick = { isFavourite.value = !isFavourite.value })
             }
         }
         Spacer(modifier = Modifier.height(Padding._12))
         Text(
-            text = item.name,
+            text = item.title,
             color = CustomColor.TextColor,
             style = FontStyle.Style_16
         )
         Spacer(modifier = Modifier.height(Padding._12))
         Text(
-            text = item.location,
+            text = item.town,
             color = CustomColor.TextColor,
             style = FontStyle.Style_14
         )
-        Spacer(modifier = Modifier.height(Padding._12))
+        Spacer(modifier = Modifier.height(Padding._8))
         Row {
             Text(
                 text = item.company,
@@ -81,14 +89,14 @@ internal fun Vacancy(item: VacancyModel, onClickColumn: () -> Unit) {
             )
             Spacer(modifier = Modifier.width(Padding._8))
             Text(
-                text = item.name,
+                text = item.previewTextExperience,
                 color = CustomColor.TextColor,
                 style = FontStyle.Style_16
             )
         }
         Spacer(modifier = Modifier.height(Padding._12))
         Text(
-            text = stringResource(R.string.publish, item.publicationDate),
+            text = stringResource(R.string.publish, publish[2], getMonth(publish[1])),
             color = CustomColor.TextColor,
             style = FontStyle.Style_14
         )
@@ -111,6 +119,24 @@ internal fun Vacancy(item: VacancyModel, onClickColumn: () -> Unit) {
                 style = FontStyle.Style_14,
             )
         }
+        Spacer(modifier = Modifier.height(Padding._12))
     }
 }
+
+fun getMonth(number: String): String =
+    when (number) {
+        "01" -> "января"
+        "02" -> "февраля"
+        "03" -> "марта"
+        "04" -> "апреля"
+        "05" -> "мая"
+        "06" -> "июня"
+        "07" -> "июля"
+        "08" -> "августа"
+        "09" -> "сентября"
+        "10" -> "октября"
+        "11" -> "ноября"
+        "12" -> "декабря"
+        else -> ""
+    }
 

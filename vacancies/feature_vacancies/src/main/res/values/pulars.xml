@@ -8,4 +8,13 @@
         <item quantity="many">Еще %s вакансий</item>
         <item quantity="other">Еще %s вакансии</item>
     </plurals>
+
+    <plurals name="vacancy">
+        <item quantity="zero">Нет вакансий</item>
+        <item quantity="one">%s вакансия</item>
+        <item quantity="two">%s вакансии</item>
+        <item quantity="few">%s вакансии</item>
+        <item quantity="many">%s вакансия</item>
+        <item quantity="other">%s вакансия</item>
+    </plurals>
 </resources>

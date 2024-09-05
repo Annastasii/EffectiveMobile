@@ -3,7 +3,7 @@
     <string name="none"></string>
     <string name="for_you">Вакансии для вас</string>
     <string name="now_looking">Сейчас просматривает %s человек</string>
-    <string name="publish">Опубликовано %s</string>
+    <string name="publish">Опубликовано %s %s</string>
     <string name="respond">Откликнуться</string>
     <string name="count_vacancies">Еще %s вакансий</string>
     <string name="count_vacancy">Еще %s вакансия</string>
@@ -21,7 +21,6 @@
     <string name="add_message">Добавить сопроводительное</string>
     <string name="your_message">Ваше сопроводительное письмо</string>
     <string name="favourite">Избранное</string>
-
-
+    <string name="exp">Требуемый опыт: %s</string>
 
 </resources>

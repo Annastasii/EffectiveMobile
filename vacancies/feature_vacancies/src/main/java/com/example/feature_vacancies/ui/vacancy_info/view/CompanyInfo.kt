@@ -22,7 +22,7 @@ import com.example.core_ui.CustomColor
 import com.example.core_ui.FontStyle
 import com.example.core_ui.Padding
 import com.example.feature_vacancies.R
-import com.example.feature_vacancies.ui.list_vacancies.state.VacancyModel
+import com.example.feature_vacancies.domain.models.VacancyModel
 
 @Composable
 fun CompanyInfo(item: VacancyModel) {
@@ -56,7 +56,7 @@ fun CompanyInfo(item: VacancyModel) {
             )
             Spacer(modifier = Modifier.height(Padding._8))
             Text(
-                text = item.location,
+                text = "${item.town}, ${item.street}, ${item.house}",
                 color = CustomColor.TextColor,
                 style = FontStyle.Style_14
             )
