@@ -95,11 +95,3 @@ fun VacanciesListScreen(
         BottomAppBar(navController)
     }
 }
-
-@Composable
-fun getText(count: Int): String =
-    when (count) {
-        1 -> stringResource(id = R.string.vacancy, count)
-        2, 3, 4 -> stringResource(id = R.string.vacancies2_4, count)
-        else -> stringResource(id = R.string.vacancies, count)
-    }

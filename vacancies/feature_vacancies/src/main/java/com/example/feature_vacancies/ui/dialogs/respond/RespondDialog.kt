@@ -67,7 +67,7 @@ fun RespondDialog(onDismiss: () -> Unit) {
                     Spacer(modifier = Modifier.height(Padding._12))
                     MessageField()
                     Button(
-                        onClick = { },
+                        onClick = { onDismiss() },
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(48.dp),

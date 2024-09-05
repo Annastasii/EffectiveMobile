@@ -8,10 +8,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import com.example.core_ui.CustomColor
@@ -19,10 +21,9 @@ import com.example.core_ui.FontStyle
 import com.example.core_ui.Padding
 import com.example.feature_vacancies.R
 import com.example.feature_vacancies.domain.models.OfferModel
-import com.example.feature_vacancies.ui.list_vacancies.getText
 
 @Composable
-fun InfoColumn( isOpenAllVacancy: Boolean, offers: List<OfferModel>, count: Int) {
+fun InfoColumn(isOpenAllVacancy: Boolean, offers: List<OfferModel>, count: Int) {
     if (!isOpenAllVacancy) {
         if (offers.isNotEmpty()) {
             LazyRow(
@@ -51,11 +52,19 @@ fun InfoColumn( isOpenAllVacancy: Boolean, offers: List<OfferModel>, count: Int)
                 style = FontStyle.Style_14
             )
             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.TopEnd) {
-                Text(
-                    text = stringResource(id = R.string.sot),
-                    color = CustomColor.LinkColor,
-                    style = FontStyle.Style_14
-                )
+                Row {
+                    Text(
+                        text = stringResource(id = R.string.sot),
+                        color = CustomColor.LinkColor,
+                        style = FontStyle.Style_14
+                    )
+                    Spacer(modifier = Modifier.width(Padding._8))
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_sort),
+                        contentDescription = null,
+                        tint = CustomColor.LinkColor
+                    )
+                }
             }
         }
     }

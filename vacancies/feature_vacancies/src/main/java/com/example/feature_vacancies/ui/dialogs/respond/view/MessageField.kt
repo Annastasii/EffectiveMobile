@@ -29,11 +29,12 @@ fun MessageField() {
     Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxWidth()) {
         if (inputVersion.value) {
             TextField(
-                value = "EE", onValueChange = {},
+                value = "", onValueChange = {},
                 modifier = Modifier
                     .background(CustomColor.PrimaryBgColor)
                     .clip(RoundedCornerShape(10.dp))
-                    .height(Padding._48),
+                    .height(Padding._48)
+                    .fillMaxWidth(),
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = CustomColor.PrimaryBgColor,
                     unfocusedContainerColor = CustomColor.PrimaryBgColor,

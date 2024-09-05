@@ -17,8 +17,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
-    private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -33,6 +31,6 @@ fun MainContent(navController: NavHostController,  viewModel: MainViewModel = hi
     val context = LocalContext.current
     NavHost(
         navController = navController,
-        startDestination = VacanciesListDestination.route()
+        startDestination = FirstDestination.route()
     ) { globalGraph(context, navController) }
 }

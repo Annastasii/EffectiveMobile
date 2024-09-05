@@ -51,7 +51,7 @@ fun CharView(
             Icon(
                 modifier = Modifier
                     .padding(Padding._12),
-                painter = painterResource(id = R.drawable.ic_star),
+                painter = painterResource(id = R.drawable.ic_stars),
                 contentDescription = null,
                 tint = CustomColor.Grey
             )
