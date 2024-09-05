@@ -1,12 +1,11 @@
 package com.example.effectivemobile.ui
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core_network.api.GoogleApi
-import com.example.core_network.dto.dtoi.DataDTOI
+import com.example.core_network.dtoi.DataDTOI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
