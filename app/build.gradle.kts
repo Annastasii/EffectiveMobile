@@ -81,7 +81,6 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.52")
     kapt("androidx.hilt:hilt-compiler:1.2.0")
 
-
     // Moshi
     implementation("com.squareup.moshi:moshi:1.12.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
@@ -102,5 +101,6 @@ dependencies {
     implementation(project(":core_ui"))
     implementation(project(":data:core_network"))
     implementation(project(":vacancies:core_vacancies:core_vacancies_api"))
+    implementation(project(":data:core_database"))
 
 }

@@ -17,7 +17,6 @@ import jakarta.inject.Singleton
 object DataBaseModule {
 
     @Provides
-    @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(
             context,
@@ -27,7 +26,7 @@ object DataBaseModule {
     }
 
     @Provides
-    fun provideUserDao(database: AppDatabase): VacancyDao {
+    fun provideVacancyDao(database: AppDatabase): VacancyDao {
         return database.vacancyDao()
     }
 }

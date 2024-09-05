@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.core_navigation.routes.PinCodeDestination
 import com.example.core_ui.Padding
@@ -21,7 +22,7 @@ import com.example.feauture_auth.view.first_auth.ui.first_auth.view.FindEmployee
 import com.example.feauture_auth.view.first_auth.ui.first_auth.view.FindWorkColumn
 
 @Composable
-fun AuthScreen(navController: NavController) {
+fun AuthScreen(navController: NavController, viewModel: AuthViewModel = hiltViewModel()) {
     Box(
         modifier = Modifier
             .background(com.example.core_ui.CustomColor.PrimaryBgColor)

@@ -5,7 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "offer")
 data class OfferEntity(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    val externalId: Int = 5,
     val id: String?,
     val title: String,
     val link: String,

@@ -13,7 +13,7 @@ class VacancyRepositoryImpl @Inject constructor(
     private val dao: VacancyDao,
 ) : VacancyRepository {
 
-    override suspend fun insertVacancy(model: VacancyModel) {
+    override suspend fun insertVacancy() {
         try {
             val response = googleApi.getJsonData()
             if (response.isSuccessful) {

@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
@@ -21,14 +22,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val navController: NavHostController = rememberNavController()
-            viewModel.fetchJsonData()
             MainContent(navController = navController)
         }
     }
 }
 
 @Composable
-fun MainContent(navController: NavHostController) {
+fun MainContent(navController: NavHostController,  viewModel: MainViewModel = hiltViewModel()) {
     val context = LocalContext.current
     NavHost(
         navController = navController,

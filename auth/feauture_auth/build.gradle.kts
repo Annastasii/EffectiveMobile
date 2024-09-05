@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.material)
     implementation(project(":vacancies:core_vacancies:core_vacancies_api"))
     implementation(project(":data:core_network"))
+    implementation(project(":data:core_database"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

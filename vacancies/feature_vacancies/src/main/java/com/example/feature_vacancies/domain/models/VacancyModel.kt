@@ -1,11 +1,6 @@
-package com.example.core_database.entity
+package com.example.feature_vacancies.domain.models
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-@Entity(tableName = "vacancy")
-data class VacancyEntity(
-    @PrimaryKey
+data class VacancyModel(
     val id: String,
     val lookingNumber: Int?,
     val title: String,
@@ -19,9 +14,9 @@ data class VacancyEntity(
     val isFavorite: Boolean,
     val fullSalary: String?,
     val shortSalary: String?,
-    val schedules: String,
+    val schedules: List<String>,
     val appliedNumber: Int?,
     val description: String?,
     val responsibilities: String,
-    val questions: String
+    val questions: List<String>
 )
