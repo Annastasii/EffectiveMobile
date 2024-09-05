@@ -19,6 +19,8 @@
             <option value="$PROJECT_DIR$/data/core_network" />
             <option value="$PROJECT_DIR$/vacancies" />
             <option value="$PROJECT_DIR$/vacancies/core_vacancies" />
+            <option value="$PROJECT_DIR$/vacancies/core_vacancies/core_vacancies_api" />
+            <option value="$PROJECT_DIR$/vacancies/core_vacancies/core_vacancies_impl" />
             <option value="$PROJECT_DIR$/vacancies/feature_vacancies" />
           </set>
         </option>

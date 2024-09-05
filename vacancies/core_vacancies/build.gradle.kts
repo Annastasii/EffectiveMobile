@@ -40,4 +40,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    api(project(":vacancies:core_vacancies:core_vacancies_api"))
+    implementation(project(":vacancies:core_vacancies:core_vacancies_impl"))
 }

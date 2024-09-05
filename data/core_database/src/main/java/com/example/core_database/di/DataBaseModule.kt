@@ -1,8 +1,9 @@
-package com.example.core_database.database
+package com.example.core_database.di
 
 import android.content.Context
 import androidx.room.Room
 import com.example.core_database.dao.VacancyDao
+import com.example.core_database.database.AppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

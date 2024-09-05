@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.data"
+    namespace = "com.example.core_vacancies_api"
     compileSdk = 34
 
     defaultConfig {
@@ -50,7 +50,4 @@ dependencies {
     kapt("androidx.hilt:hilt-compiler:1.0.0")
     kapt("androidx.hilt:hilt-navigation-compose:1.0.0")
 
-    implementation(project(":vacancies:core_vacancies"))
-    implementation(project(":data:core_network"))
-    implementation(project(":data:core_database"))
 }
