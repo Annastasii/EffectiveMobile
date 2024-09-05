@@ -29,9 +29,8 @@ fun TopTextField() {
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         TextField(
-            value = "EE", onValueChange = {},
+            value = "", onValueChange = {},
             modifier = Modifier
-                .background(CustomColor.SecondaryBgColor)
                 .clip(RoundedCornerShape(10.dp))
                 .height(Padding._48),
             colors = TextFieldDefaults.colors(
@@ -44,13 +43,14 @@ fun TopTextField() {
         Spacer(modifier = Modifier.width(Padding._12))
         Box(
             modifier = Modifier
-                .background(CustomColor.SecondaryBgColor),
+                .background(CustomColor.SecondaryBgColor, RoundedCornerShape(10.dp)),
             contentAlignment = Alignment.Center
         ) {
             Icon(
                 painter = painterResource(id = R.drawable.ic_setting),
                 contentDescription = null,
-                modifier = Modifier.padding(Padding._12)
+                modifier = Modifier.padding(Padding._12),
+                tint = CustomColor.TextColor
             )
         }
     }

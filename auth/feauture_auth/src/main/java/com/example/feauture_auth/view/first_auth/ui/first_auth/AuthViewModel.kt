@@ -17,7 +17,6 @@ class AuthViewModel @Inject constructor(
     val emailValidator = MutableStateFlow<Boolean>(false)
 
     fun enterEmail(value: String) {
-        Log.d("testy", "$value")
         email.value = value
         emailValidator.value =  emailValidator(value)
     }

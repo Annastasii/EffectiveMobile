@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="count_vacancy">
+        <item quantity="zero">Нет вакансий</item>
+        <item quantity="one">Еще %s вакансия</item>
+        <item quantity="two">Еще %s вакансии</item>
+        <item quantity="few">Еще %s вакансии</item>
+        <item quantity="many">Еще %s вакансий</item>
+        <item quantity="other">Еще %s вакансии</item>
+    </plurals>
+</resources>

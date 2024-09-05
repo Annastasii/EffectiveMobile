@@ -17,22 +17,18 @@ import com.example.core_ui.CustomColor
 import com.example.core_ui.FontStyle
 import com.example.core_ui.Padding
 import com.example.feature_vacancies.R
-import com.example.feature_vacancies.domain.Constants
+import com.example.feature_vacancies.domain.models.OfferModel
 import com.example.feature_vacancies.ui.list_vacancies.getText
 
 @Composable
-fun InfoColumn(isOpenAllVacancy: Boolean) {
+fun InfoColumn(isOpenAllVacancy: Boolean, offers: List<OfferModel>) {
     if (!isOpenAllVacancy) {
         if (!isOpenAllVacancy) {
-            if (Constants.offers.isNotEmpty()) {
+            if (offers.isNotEmpty()) {
                 LazyRow(
-                    Modifier.padding(
-                        top = Padding._12,
-                        bottom = Padding._12,
-                        start = Padding._12
-                    )
+                    Modifier.padding(top = Padding._12)
                 ) {
-                    Constants.offers.forEach {
+                    offers.forEach {
                         item {
                             Offer(it)
                             Spacer(modifier = Modifier.width(Padding._12))
@@ -40,6 +36,7 @@ fun InfoColumn(isOpenAllVacancy: Boolean) {
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(Padding._18))
             Text(
                 text = stringResource(id = R.string.for_you),
                 color = CustomColor.TextColor,
@@ -49,11 +46,11 @@ fun InfoColumn(isOpenAllVacancy: Boolean) {
         } else {
             Spacer(modifier = Modifier.height(Padding._12))
             Row(Modifier.fillMaxWidth()) {
-                Text(
-                    text = getText(count = Constants.vacancy.count()),
-                    color = CustomColor.TextColor,
-                    style = FontStyle.Style_14
-                )
+//                Text(
+//                    text = getText(count = Constants.vacancy.count()),
+//                    color = CustomColor.TextColor,
+//                    style = FontStyle.Style_14
+//                )
                 Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.TopEnd) {
                     Text(
                         text = stringResource(id = R.string.sot),

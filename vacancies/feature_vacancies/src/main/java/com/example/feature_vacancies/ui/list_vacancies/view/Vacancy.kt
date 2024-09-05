@@ -25,8 +25,8 @@ import com.example.core_ui.CustomColor
 import com.example.core_ui.FontStyle
 import com.example.core_ui.Padding
 import com.example.feature_vacancies.R
+import com.example.feature_vacancies.domain.models.VacancyModel
 import com.example.feature_vacancies.ui.common.IconFavourite
-import com.example.feature_vacancies.ui.list_vacancies.state.VacancyModel
 
 @Composable
 internal fun Vacancy(item: VacancyModel, onClickColumn: () -> Unit) {

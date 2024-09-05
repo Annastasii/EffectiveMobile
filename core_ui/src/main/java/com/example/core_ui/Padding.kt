@@ -15,5 +15,7 @@ object Padding {
     val _48 = 48.dp
     val _53 = 53.dp
     val _73 = 73.dp
+    val _132 = 132.dp
+    val _120 = 120.dp
     val _175 = 175.dp
 }

@@ -11,6 +11,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.example.core_navigation.routes.FirstDestination
+import com.example.core_navigation.routes.VacanciesListDestination
 import com.example.effectivemobile.ui.navigation.globalGraph
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,6 +33,6 @@ fun MainContent(navController: NavHostController,  viewModel: MainViewModel = hi
     val context = LocalContext.current
     NavHost(
         navController = navController,
-        startDestination = FirstDestination.route()
+        startDestination = VacanciesListDestination.route()
     ) { globalGraph(context, navController) }
 }
