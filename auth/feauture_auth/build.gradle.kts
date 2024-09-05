@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -43,11 +45,13 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(project(":vacancies:core_vacancies:core_vacancies_api"))
+    implementation(project(":data:core_network"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(project(":core_ui"))
+
 
     // Compose
     implementation(platform(libs.androidx.compose.bom))
@@ -57,5 +61,14 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
+
     implementation(project(":core_navigation"))
+    implementation(project(":core_ui"))
+
+    //Hilt
+    implementation("com.google.dagger:hilt-android:2.52")
+    implementation("androidx.hilt:hilt-work:1.2.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    kapt("com.google.dagger:hilt-compiler:2.52")
+    kapt("androidx.hilt:hilt-compiler:1.2.0")
 }
