@@ -30,4 +30,8 @@ class VacancyInfoViewModel @Inject constructor(
     private fun getVacancy() {
         _vacancy.value = dao.getVacancy(id).mapToModel()
     }
+
+    fun changeFavourite(id: String, isFavourite: Boolean) {
+        dao.updateFavourite(id, isFavourite)
+    }
 }

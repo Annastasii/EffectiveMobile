@@ -21,7 +21,7 @@ import com.example.feature_vacancies.R
 import com.example.feature_vacancies.ui.common.IconFavourite
 
 @Composable
-fun TopBar(isFavourite: Boolean, onClickBack: () -> Unit) {
+fun TopBar(isFavourite: Boolean, onClickBack: () -> Unit, onClickFav: (Boolean) -> Unit) {
     val fav = remember { mutableStateOf(isFavourite) }
     Row(
         modifier = Modifier
@@ -48,7 +48,7 @@ fun TopBar(isFavourite: Boolean, onClickBack: () -> Unit) {
                     tint = CustomColor.TextColor
                 )
                 Spacer(modifier = Modifier.width(Padding._12))
-                IconFavourite(isFavourite = fav.value) { fav.value = !fav.value }
+                IconFavourite(isFavourite = fav.value) { onClickFav(!isFavourite) }
             }
         }
     }

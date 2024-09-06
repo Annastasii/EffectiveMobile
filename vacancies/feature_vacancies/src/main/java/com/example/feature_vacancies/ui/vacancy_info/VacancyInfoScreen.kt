@@ -53,7 +53,13 @@ fun VacancyInfoScreen(
                 .padding(Padding._12)
                 .fillMaxSize()
         ) {
-            item { TopBar(onClickBack = { navController.navigateUp() }, isFavourite = vacancy.isFavorite) }
+            item {
+                TopBar(
+                    onClickBack = { navController.navigateUp() },
+                    isFavourite = vacancy.isFavorite,
+                    onClickFav = { viewModel.changeFavourite(vacancy.id, it) }
+                )
+            }
             item { MainInfo(item = vacancy) }
             item { StatisticRow(vacancy) }
             item { CompanyInfo(item = vacancy) }
