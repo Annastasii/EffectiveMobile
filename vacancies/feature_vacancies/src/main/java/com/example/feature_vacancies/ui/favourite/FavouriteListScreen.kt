@@ -56,7 +56,8 @@ fun FavouriteListScreen(
             item {
                 Vacancy(
                     it,
-                    onClickColumn = { navController.navigate(VacancyInfoDestination.route()) })
+                    onClickColumn = { navController.navigate(VacancyInfoDestination.route()) },
+                    updateFav = viewModel::changeFavourite)
                 Spacer(modifier = Modifier.height(Padding._12))
             }
         }

@@ -66,6 +66,10 @@ dependencies {
     implementation(project(":core_navigation"))
     implementation(project(":core_ui"))
 
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
     //Hilt
     implementation("com.google.dagger:hilt-android:2.52")
     implementation("androidx.hilt:hilt-work:1.2.0")

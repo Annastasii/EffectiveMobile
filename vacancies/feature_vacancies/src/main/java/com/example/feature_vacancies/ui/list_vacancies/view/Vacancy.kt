@@ -31,7 +31,7 @@ import com.example.feature_vacancies.domain.models.VacancyModel
 import com.example.feature_vacancies.ui.common.IconFavourite
 
 @Composable
-internal fun Vacancy(item: VacancyModel, onClickColumn: () -> Unit) {
+internal fun Vacancy(item: VacancyModel, onClickColumn: () -> Unit, updateFav: (String, Boolean) -> Unit) {
     val isFavourite = remember { mutableStateOf(item.isFavorite) }
     val publish = item.publishedDate.split("-")
     Column(
@@ -51,7 +51,7 @@ internal fun Vacancy(item: VacancyModel, onClickColumn: () -> Unit) {
             Box(contentAlignment = Alignment.TopEnd, modifier = Modifier.fillMaxWidth()) {
                 IconFavourite(
                     isFavourite = isFavourite.value,
-                    onClick = { isFavourite.value = !isFavourite.value })
+                    onClick = { updateFav(item.id, !item.isFavorite) })
             }
         }
         Spacer(modifier = Modifier.height(Padding._12))
