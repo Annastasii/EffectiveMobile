@@ -103,4 +103,7 @@ dependencies {
     implementation(project(":vacancies:core_vacancies:core_vacancies_api"))
     implementation(project(":data:core_database"))
 
+    // Compose Material
+    implementation("androidx.compose.material:material:1.3.1")
+
 }

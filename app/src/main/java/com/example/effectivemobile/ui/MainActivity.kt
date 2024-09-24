@@ -3,15 +3,13 @@ package com.example.effectivemobile.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.example.core_navigation.routes.FirstDestination
-import com.example.core_navigation.routes.VacanciesListDestination
+import com.example.core_navigation.routes.rest.WelcomeDestination
 import com.example.effectivemobile.ui.navigation.globalGraph
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,6 +29,6 @@ fun MainContent(navController: NavHostController,  viewModel: MainViewModel = hi
     val context = LocalContext.current
     NavHost(
         navController = navController,
-        startDestination = FirstDestination.route()
+        startDestination = WelcomeDestination.route()
     ) { globalGraph(context, navController) }
 }

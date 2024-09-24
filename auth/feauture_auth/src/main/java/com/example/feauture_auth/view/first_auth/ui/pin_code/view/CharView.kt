@@ -31,7 +31,6 @@ fun CharView(
         index > text.length -> ""
         else -> text[index].toString()
     }
-
     Box(
         modifier = Modifier
             .width(Padding._73)

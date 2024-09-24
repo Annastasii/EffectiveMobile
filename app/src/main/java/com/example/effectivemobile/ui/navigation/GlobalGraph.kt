@@ -12,7 +12,11 @@ import com.example.core_navigation.routes.PinCodeDestination
 import com.example.core_navigation.routes.ProfileDestination
 import com.example.core_navigation.routes.VacanciesListDestination
 import com.example.core_navigation.routes.VacancyInfoDestination
+import com.example.core_navigation.routes.rest.CreateRestaurantDestination
+import com.example.core_navigation.routes.rest.WelcomeDestination
 import com.example.core_ui.view.EmptyView
+import com.example.effectivemobile.ui.view.create_restoraunt.CreateRestaurant
+import com.example.effectivemobile.ui.view.welcome.WelcomeScreen
 import com.example.feature_vacancies.ui.favourite.FavouriteListScreen
 import com.example.feature_vacancies.ui.list_vacancies.VacanciesListScreen
 import com.example.feature_vacancies.ui.vacancy_info.VacancyInfoScreen
@@ -56,4 +60,14 @@ fun NavGraphBuilder.globalGraph(
     composable(
         destination = ProfileDestination
     ) { EmptyView(navController) }
+
+
+
+    composable(
+        destination = WelcomeDestination
+    ) { WelcomeScreen(navController) }
+
+    composable(
+        destination = CreateRestaurantDestination
+    ) { CreateRestaurant(navController) }
 }

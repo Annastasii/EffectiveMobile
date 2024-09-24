@@ -24,6 +24,7 @@ class AuthViewModel @Inject constructor(
 ) : ViewModel() {
 
     val email = MutableStateFlow<String>("")
+    
     val emailValidator = MutableStateFlow<Boolean>(false)
 
     init {

@@ -4,4 +4,23 @@
     <string name="finder_work">Поиск работы</string>
     <string name="continu">Продолжить</string>
     <string name="enter_with_pas">Войти с паролем</string>
+
+
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="enter_data">Введите имя, номер телефона или адрес электронной почты для регистрации</string>
+    <string name="name">Ваше имя</string>
+    <string name="phone_or_email">Телефон или почта</string>
+    <string name="continuee">Продолжить</string>
+    <string name="create_title">Создайте первое заведение</string>
+    <string name="create_text">Вы всегда можете изменить данные в настройках</string>
+    <string name="name_restaurant">Название заведения</string>
+    <string name="add_after">Далее вы сможете добавлять еще заведения</string>
+    <string name="place">Страна и город</string>
+    <string name="place_text">Требуется для определения часового пояса</string>
+    <string name="address">Адрес</string>
+    <string name="new_restaurant">Это новое заведение</string>
+    <string name="new_restaurant_text">Отметьте галочкой, если ваше заведение только начало работу</string>
+    <string name="system">Система автоматизации</string>
+    <string name="system_text">Название системы, которой вы пользовались ранее</string>
+
 </resources>
